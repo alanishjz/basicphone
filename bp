@@ -10,9 +10,6 @@ class Celularbarat {
 		this.info = `Tiene un peso de ${this.peso}, con una resolucion de pantalla ${this.pantalla}p, el color de la pantalla es de ${this.color},
 		y tiene ${this.ram} gb de ram, tiene una camara de ${this.camara} pixeles`;
 	}
-	verInfo(){
-		document.write(this.info)
-	}
 	presionarBotonDeEncendido(){
 		if (this.encendido == false) {
 			alert("celular prendido");
@@ -35,13 +32,28 @@ class Celularbarat {
 	grabarVideo(){
 		alert(`grabando video en una resolucion: ${this.camara}`);
 	}
+	mobileInfo(){
+		return`
+		Peso: <b>${this.peso}</b></br>
+		Pantalla: <b>${this.pantalla}</b></br>
+		Color: <b>${this.color}</b></br>
+		Ram: <b>${this.ram}</b></br>
+		Camara: <b>${this.camara}</b></br>`;
+	}
 }
 
+const celular = new Celularbarat ("120g",640,"azul","2GB","720");
+const celular2 = new Celularbarat ("100g",640,"blanca","2GB","480");
+const celular3 = new Celularbarat ("60g",720,"rojo","3GB","720");
 
-const celular1 = new Celularbarat ("120g",640,"azul","2GB","720");
+//celular.presionarBotonDeEncendido();
+//celular.tomarFoto();
+//celular.grabarVideo();
+//celular.reiniciar();
 
-celular1.presionarBotonDeEncendido();
-celular1.tomarFoto();
-celular1.grabarVideo();
-celular1.reiniciar();
-celular1.verInfo();
+
+document.write(`
+	${celular.mobileInfo()} <br>
+	${celular2.mobileInfo()} <br>
+	${celular3.mobileInfo()} <br>
+	`);
