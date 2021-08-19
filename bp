@@ -1,0 +1,47 @@
+
+class Celularbarat {
+	constructor(peso,pantalla,color,ram,camara){
+		this.peso = peso;
+		this.pantalla = pantalla;
+		this.color = color;
+		this.ram = ram;
+		this.camara = camara;
+		this.encendido = false;
+		this.info = `Tiene un peso de ${this.peso}, con una resolucion de pantalla ${this.pantalla}p, el color de la pantalla es de ${this.color},
+		y tiene ${this.ram} gb de ram, tiene una camara de ${this.camara} pixeles`;
+	}
+	verInfo(){
+		document.write(this.info)
+	}
+	presionarBotonDeEncendido(){
+		if (this.encendido == false) {
+			alert("celular prendido");
+			this.encendido = true;
+		} else {
+			alert("celular apagado");
+
+		}
+	}
+	reiniciar(){
+		if (this.encendido == true){
+			alert("reiniciar celular");
+		} else{
+			alert("el celular esta apagado")
+		}
+	}
+	tomarFoto(){
+		alert(`foto tomada en una resolucion de: ${this.camara}`);
+	}
+	grabarVideo(){
+		alert(`grabando video en una resolucion: ${this.camara}`);
+	}
+}
+
+
+const celular1 = new Celularbarat ("120g",640,"azul","2GB","720");
+
+celular1.presionarBotonDeEncendido();
+celular1.tomarFoto();
+celular1.grabarVideo();
+celular1.reiniciar();
+celular1.verInfo();
